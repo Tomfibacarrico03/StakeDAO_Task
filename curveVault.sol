@@ -3941,6 +3941,7 @@ contract FixedAPY is ERC20Upgradeable {
 			curveVault.withdraw(amountToWithdraw - tokenBalance);
 			//withdrawfee?
 		}
+        token.safeTransfer(msg.sender, amountToWithdraw);
 		emit Withdraw(msg.sender,_shares);
 	}
 
